@@ -1,4 +1,4 @@
-#include "Camera.h"
+#include "Camera.hpp"
 #include <cmath>
 
 #define PI 3.14159265

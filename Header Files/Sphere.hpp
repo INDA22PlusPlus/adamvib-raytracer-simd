@@ -1,8 +1,8 @@
 #pragma once
-#include "Vector3.h"
-#include "Material.h"
-#include "Ray.h"
-#include "Object.h"
+#include "Vector3.hpp"
+#include "Material.hpp"
+#include "Ray.hpp"
+#include "Object.hpp"
 
 class Sphere : public Object
 {

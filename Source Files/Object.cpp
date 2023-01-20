@@ -1,3 +1,3 @@
-#include "Object.h"
+#include "Object.hpp"
 
 Object::Object(const Material &material) : material(material) {}

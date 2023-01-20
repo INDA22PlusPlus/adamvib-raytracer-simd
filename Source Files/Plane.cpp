@@ -1,4 +1,4 @@
-#include "Plane.h"
+#include "Plane.hpp"
 #include <cmath>
 
 Plane::Plane(const Vector3 &point, const Vector3 &normal, const Material &material) : Object(material), point(point), normal(normal) {}

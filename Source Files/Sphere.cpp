@@ -1,4 +1,4 @@
-#include "Sphere.h"
+#include "Sphere.hpp"
 #include <cmath>
 
 Sphere::Sphere(const Vector3 &center, double radius, const Material &material) : Object(material), center(center), radius(radius) {}

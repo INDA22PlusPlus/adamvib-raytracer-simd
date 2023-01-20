@@ -1,15 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include "Vector3.h"
-#include "Ray.h"
-#include "Camera.h"
-#include "Light.h"
-#include "Material.h"
-#include "Object.h"
-#include "Sphere.h"
-#include "Plane.h"
-#include "Scene.h"
+#include "Vector3.hpp"
+#include "Ray.hpp"
+#include "Camera.hpp"
+#include "Light.hpp"
+#include "Material.hpp"
+#include "Object.hpp"
+#include "Sphere.hpp"
+#include "Plane.hpp"
+#include "Scene.hpp"
 
 int main(int argc, char *argv[])
 {

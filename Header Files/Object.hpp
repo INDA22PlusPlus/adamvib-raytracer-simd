@@ -1,7 +1,7 @@
 #pragma once
-#include "Vector3.h"
-#include "Material.h"
-#include "Ray.h"
+#include "Vector3.hpp"
+#include "Material.hpp"
+#include "Ray.hpp"
 
 class Object
 {
