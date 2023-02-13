@@ -1,1 +1,0 @@
-add_executable(raytracer Main.cpp Vector3.cpp Ray.cpp Camera.cpp Light.cpp Material.cpp Object.cpp Sphere.cpp Plane.cpp Scene.cpp)
