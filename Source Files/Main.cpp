@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     // std::cout << width << " " << height << std::endl;
     // std::cout << "255" << std::endl;
 
-    ankerl::nanobench::Bench().run("rayracer", [&] {
+    ankerl::nanobench::Bench().warmup(3).run("rayracer", [&] {
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
