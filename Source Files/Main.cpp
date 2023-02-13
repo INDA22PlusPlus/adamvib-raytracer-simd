@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <nanobench.h>
 #include "Vector3.hpp"
 #include "Ray.hpp"
 #include "Camera.hpp"
@@ -26,48 +27,50 @@ int main(int argc, char *argv[])
 
     scene.addLight(Light(Vector3(0, -1, -1), Vector3(1, 1, 1)));
     
-    double width = 640;
-    double height = 480;
+    double width = 1920;
+    double height = 1080;
 
-    if (argc > 1)
-    {
-        width = std::stoi(argv[1]);
-        height = std::stoi(argv[2]);
-    }
+    // if (argc > 1)
+    // {
+    //     width = std::stoi(argv[1]);
+    //     height = std::stoi(argv[2]);
+    // }
 
     double aspectRatio = width / height;
 
     Camera camera(Vector3(0, 0, 0), Vector3(0, 0, 1), aspectRatio, 90);
 
-    std::cout << "P3" << std::endl;
-    std::cout << "# Raytracer output" << std::endl;
-    std::cout << width << " " << height << std::endl;
-    std::cout << "255" << std::endl;
+    // std::cout << "P3" << std::endl;
+    // std::cout << "# Raytracer output" << std::endl;
+    // std::cout << width << " " << height << std::endl;
+    // std::cout << "255" << std::endl;
 
-
-    for (int y = 0; y < height; y++)
-    {
-        for (int x = 0; x < width; x++)
+    ankerl::nanobench::Bench().run("rayracer", [&] {
+        for (int y = 0; y < height; y++)
         {
-            // Ray middleRay = camera.getRay((double)x / width, (double)y / height);
-            // Ray rays[] = {
-            //     camera.getRay((double)x / width + 0.5 / width, (double)y / height + 0.5 / height),
-            //     camera.getRay((double)x / width + 0.5 / width, (double)y / height - 0.5 / height),
-            //     camera.getRay((double)x / width - 0.5 / width, (double)y / height + 0.5 / height),
-            //     camera.getRay((double)x / width - 0.5 / width, (double)y / height - 0.5 / height),
-            // };
-            // Vector3 color = scene.trace(middleRay, 0);
-            // for (int i = 0; i < 5; i++)
-            // {
-            //     color = color.avarage(scene.trace(rays[i], 0));
-            // }
-            // std::cout << (int)(color.x * 255) << " " << (int)(color.y * 255) << " " << (int)(color.z * 255) << std::endl;
+            for (int x = 0; x < width; x++)
+            {
+                // Ray middleRay = camera.getRay((double)x / width, (double)y / height);
+                // Ray rays[] = {
+                //     camera.getRay((double)x / width + 0.5 / width, (double)y / height + 0.5 / height),
+                //     camera.getRay((double)x / width + 0.5 / width, (double)y / height - 0.5 / height),
+                //     camera.getRay((double)x / width - 0.5 / width, (double)y / height + 0.5 / height),
+                //     camera.getRay((double)x / width - 0.5 / width, (double)y / height - 0.5 / height),
+                // };
+                // Vector3 color = scene.trace(middleRay, 0);
+                // for (int i = 0; i < 5; i++)
+                // {
+                //     color = color.avarage(scene.trace(rays[i], 0));
+                // }
+                // std::cout << (int)(color.x * 255) << " " << (int)(color.y * 255) << " " << (int)(color.z * 255) << std::endl;
 
 
-            Ray ray = camera.getRay((double)x / width, (double)y / height);
-            Vector3 color = scene.trace(ray, 0);
-            std::cout << (int)(color.x * 255) << " " << (int)(color.y * 255) << " " << (int)(color.z * 255) << std::endl;
+                Ray ray = camera.getRay((double)x / width, (double)y / height);
+                Vector3 color = scene.trace(ray, 0);
+                // std::cout << (int)(color.x * 255) << " " << (int)(color.y * 255) << " " << (int)(color.z * 255) << std::endl;
+            }
         }
-    }
+    });
+
     return 0;
 }
