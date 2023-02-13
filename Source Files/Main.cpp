@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 
     scene.addLight(Light(Vector3(0, -1, -1), Vector3(1, 1, 1)));
     
-    double width = 1920;
-    double height = 1080;
+    double width = 300;
+    double height = 300;
 
     // if (argc > 1)
     // {
