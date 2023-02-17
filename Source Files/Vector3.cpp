@@ -19,8 +19,8 @@ double Vector3::dot(const Vector3 &v) const { return x * v.x + y * v.y + z * v.z
 double Vector3::length() const { return sqrt(x * x + y * y + z * z); }
 Vector3 Vector3::normalize() const { return (*this) / length(); }
 Vector3 Vector3::cross(const Vector3 &v) const {
-    __m256d vec0 = _mm256_set_pd(x, y, z, 0);
-    __m256d vec1 = _mm256_set_pd(v.x, v.y, v.z, 0);
+    __m256d vec0 = _mm256_setr_pd(x, y, z, 0);
+    __m256d vec1 = _mm256_setr_pd(v.x, v.y, v.z, 0);
 
     __m256d a_yzx = _mm256_shuffle_pd(vec0, vec0, SHUFFLE_MASK_0);
     __m256d b_yzx = _mm256_shuffle_pd(vec1, vec1, SHUFFLE_MASK_0);
