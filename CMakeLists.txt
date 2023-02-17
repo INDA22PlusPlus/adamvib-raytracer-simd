@@ -21,6 +21,7 @@ FetchContent_MakeAvailable(nanobench)
 
 set(source_dir "${PROJECT_SOURCE_DIR}/Source Files")
 set(source_files ${source_dir}/Main.cpp ${source_dir}/Light.cpp ${source_dir}/Object.cpp ${source_dir}/Plane.cpp ${source_dir}/Scene.cpp ${source_dir}/Vector3.cpp ${source_dir}/Ray.cpp ${source_dir}/Sphere.cpp  ${source_dir}/Camera.cpp ${source_dir}/Material.cpp)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
 
 add_executable(raytracer ${source_files})
 
